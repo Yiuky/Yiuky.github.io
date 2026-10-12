@@ -59,26 +59,34 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-slate-950">
 
   <!-- Header / Nav -->
   <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-2 group shrink-0">
         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono font-bold text-sm group-hover:border-emerald-400 transition-colors">
           JG
         </span>
         <span class="font-bold tracking-tight text-slate-100 group-hover:text-emerald-400 transition-colors">Joberth Gambati</span>
       </a>
-      <nav class="flex items-center gap-5 text-sm font-medium text-slate-400">
-        <a href="#projetos" class="hover:text-slate-100 transition-colors">Projetos</a>
-        <a href="#atuacao" class="hover:text-slate-100 transition-colors">Áreas</a>
-        <a href="#tecnologias" class="hover:text-slate-100 transition-colors">Stack</a>
-        <a href="#pesquisa" class="hover:text-slate-100 transition-colors">Pesquisa</a>
-        <a href="#cafe" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-          <span>☕</span> Doe um café
+      <nav class="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-400 overflow-x-auto no-scrollbar py-1">
+        <a href="#projetos" class="hover:text-slate-100 transition-colors whitespace-nowrap">Projetos</a>
+        <a href="#atuacao" class="hover:text-slate-100 transition-colors whitespace-nowrap">Áreas</a>
+        <a href="#tecnologias" class="hover:text-slate-100 transition-colors whitespace-nowrap">Stack</a>
+        <a href="#pesquisa" class="hover:text-slate-100 transition-colors whitespace-nowrap">Pesquisa</a>
+        <a href="#cafe" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h18v2H2z"/></svg>
+          Doe um café
         </a>
       </nav>
     </div>
@@ -104,24 +112,25 @@
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="https://github.com/Yiuky" target="_blank" class="px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+        <a href="https://github.com/Yiuky" target="_blank" class="h-10 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
           GitHub (@Yiuky)
         </a>
-        <a href="https://www.linkedin.com/in/joberth-firmino-gambati-57248a94" target="_blank" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-          <svg class="w-4 h-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="https://www.linkedin.com/in/joberth-firmino-gambati-57248a94" target="_blank" class="h-10 px-4 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700/80 hover:border-slate-600 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           LinkedIn
         </a>
-        <a href="https://www.threads.com/@jgambati" target="_blank" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-          <span class="text-xs">🧵</span>
+        <a href="https://www.threads.com/@jgambati" target="_blank" class="h-10 px-4 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700/80 hover:border-slate-600 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-slate-200" fill="currentColor" viewBox="0 0 192 192"><path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.381 72.0625C80.8444 63.7668 89.2646 60.0168 97.2246 60.0168C97.3061 60.0168 97.3876 60.0175 97.4691 60.0182C106.634 60.0768 116.711 65.3486 122.569 82.2741C114.733 81.3344 106.012 81.4284 96.7937 82.6083C66.8624 86.4384 49.6202 102.834 50.7788 124.966C51.8797 146.002 69.4586 158.421 91.5647 158.421C108.977 158.421 121.282 149.613 128.513 138.54C133.568 152.022 144.524 158.421 160.779 158.421C172.936 158.421 182.806 153.535 188.755 144.577C194.502 135.925 197.34 123.518 197.34 107.039C197.34 81.0827 189.15 59.9881 173.684 44.7865C158.455 29.8166 135.534 21.6562 105.772 21.6562C76.4172 21.6562 52.8804 30.6094 36.9388 47.7842C20.6976 65.2818 12.3398 90.045 12.3398 121.036C12.3398 151.722 20.6866 176.486 36.8799 193.993C52.7915 211.201 76.3312 220.155 105.772 220.155C125.792 220.155 144.17 215.112 160.404 205.151L151.849 191.04C137.669 199.743 122.25 204.155 105.772 204.155C81.1895 204.155 61.9168 196.721 48.5152 182.23C34.7842 167.382 27.6033 146.046 27.6033 121.036C27.6033 95.7369 34.7842 74.3981 48.5152 59.5498C61.9168 45.0594 81.1895 37.6562 105.772 37.6562C130.825 37.6562 149.96 44.3854 162.628 56.8407C175.147 69.1502 181.74 86.3776 181.74 107.039C181.74 120.485 179.463 130.401 175.176 136.852C171.054 143.055 164.846 146.421 156.404 146.421C145.045 146.421 138.163 139.73 136.216 126.732C140.718 114.717 142.348 101.444 141.537 88.9883ZM122.569 98.4283C122.42 109.972 120.61 119.866 116.892 127.355C112.28 134.743 103.882 142.421 91.5647 142.421C77.4095 142.421 66.5297 134.225 65.8643 121.464C65.0219 105.298 78.4326 94.6729 100.865 92.5188C107.876 91.8454 114.981 92.0573 122.146 93.1114C122.43 94.8837 122.569 96.6561 122.569 98.4283Z"/></svg>
           Threads
         </a>
-        <a href="https://x.com/JoberthFG_" target="_blank" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-          <svg class="w-3.5 h-3.5 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <a href="https://x.com/JoberthFG_" target="_blank" class="h-10 px-4 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700/80 hover:border-slate-600 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X
         </a>
-        <a href="https://doi.org/10.5380/raega.v63i2.99969" target="_blank" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-          📄 Artigo RA'E GA (2025)
+        <a href="https://doi.org/10.5380/raega.v63i2.99969" target="_blank" class="h-10 px-4 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-100 font-medium text-sm border border-slate-700/80 hover:border-slate-600 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Artigo RA'E GA (2025)
         </a>
       </div>
     </div>
@@ -139,148 +148,157 @@
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- ArcMagery & QMagery -->
-      <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              ArcGIS &amp; QGIS
-            </span>
-            <span class="text-xs text-slate-400 font-mono">Uso Gratuito · v2.4.8</span>
+    <!-- Projetos: 1 Destaque Principal (Full-Width) + Grade Simétrica 2x2 -->
+    <div class="space-y-6">
+      <!-- ArcMagery & QMagery (Destaque Principal) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border-emerald-500/30 relative overflow-hidden group">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/15 transition-all"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2.5 mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                ⭐ Projeto Principal
+              </span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                ArcGIS 10.8 &amp; QGIS 3.18+
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Uso Gratuito · v2.4.8</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-100 mb-3 tracking-tight">
+              ArcMagery &amp; QMagery
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 mb-5 leading-relaxed max-w-3xl font-light">
+              Busca, recorta e carrega imagens de satélite direto na tabela de conteúdos (TOC) do <strong>ArcMap 10.8</strong> e do <strong>QGIS 3.18+</strong> na resolução nativa. Suporte integrado a 6 fontes: Google Earth Engine, CBERS-2/4/Amazônia-1 (INPE), SPOT 1–5 (CNES com corregistro geométrico à Esri), Google Earth histórico, Esri Wayback e camadas XYZ.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/50">Python 2.7 / 3.12</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/50">PyQGIS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/50">STAC API</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/50">Phase Correlation</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/50">Repositório Oficial QGIS</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">ArcMagery &amp; QMagery</h3>
-          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-            Busca, recorta e carrega imagens de satélite direto no TOC do <strong>ArcMap 10.8</strong> e no <strong>QGIS 3.18+</strong> na resolução nativa. 
-            Suporte a 6 fontes: Google Earth Engine, CBERS-2/4/Amazônia-1 (INPE), SPOT 1–5 (CNES com alinhamento à Esri), Google Earth histórico, Esri Wayback e XYZ.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
-            <span class="px-2 py-0.5 rounded bg-slate-800">Python 2.7 / 3.12</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">PyQGIS</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">STAC</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Phase Correlation</span>
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 pt-2 lg:pt-0">
+            <a href="https://github.com/Yiuky/ArcMagery-releases" target="_blank" class="h-10 px-5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 inline-flex items-center justify-center gap-2 whitespace-nowrap">
+              Downloads &amp; Releases &rarr;
+            </a>
+            <a href="https://github.com/Yiuky/ArcMagery-releases#qmagery-qgis-318" target="_blank" class="h-10 px-5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-medium text-sm border border-slate-700 transition-all inline-flex items-center justify-center gap-2 whitespace-nowrap">
+              Repositório QGIS
+            </a>
           </div>
-        </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-slate-800/80">
-          <a href="https://github.com/Yiuky/ArcMagery-releases" target="_blank" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
-            Downloads &amp; Releases &rarr;
-          </a>
-          <span class="text-slate-600">·</span>
-          <a href="https://github.com/Yiuky/ArcMagery-releases#qmagery-qgis-318" target="_blank" class="text-xs text-slate-400 hover:text-slate-200">
-            Repositório QGIS
-          </a>
         </div>
       </div>
 
-      <!-- PrivioSentry -->
-      <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
-              IA Local · Privacidade
-            </span>
-            <span class="text-xs text-slate-400 font-mono">AGPL-3.0</span>
+      <!-- Grade Simétrica 2x2: PrivioSentry, Porta-Voz, ReperIO, CODES -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- PrivioSentry -->
+        <div class="glass-card rounded-xl p-6 flex flex-col h-full">
+          <div class="flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                IA Local · Privacidade
+              </span>
+              <span class="text-xs text-slate-400 font-mono">AGPL-3.0</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-100 mb-2">PrivioSentry</h3>
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed font-light">
+              Identifica CPFs e endereços pessoais em PDFs com IA que roda 100% na máquina local (Tesseract OCR + detector YOLO de assinaturas + LLM de visão via Ollama). Sugere as tarjas com interface web para revisão humana e garantia que <strong>falha fechado</strong>.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 mt-auto text-xs font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Ollama</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">YOLO</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Tesseract</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">LGPD</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">PrivioSentry</h3>
-          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-            Identifica CPFs e endereços pessoais em PDFs com IA que roda 100% na máquina local (Tesseract OCR + detector YOLO de assinaturas + LLM de visão via Ollama). 
-            Sugere as tarjas com interface web para revisão humana e garantia que <strong>falha fechado</strong>.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
-            <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Ollama</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">YOLO</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Tesseract</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">LGPD</span>
+          <div class="flex items-center gap-3 pt-3 mt-auto border-t border-slate-800/80">
+            <a href="https://github.com/Yiuky/PrivioSentry" target="_blank" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1">
+              Ver Código no GitHub &rarr;
+            </a>
           </div>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-slate-800/80">
-          <a href="https://github.com/Yiuky/PrivioSentry" target="_blank" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1">
-            Ver Código no GitHub &rarr;
-          </a>
-        </div>
-      </div>
 
-      <!-- Porta-Voz -->
-      <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              IA de Voz · Telefonia Local
-            </span>
-            <span class="text-xs text-slate-400 font-mono">v1.2.0 · Local-First</span>
+        <!-- Porta-Voz -->
+        <div class="glass-card rounded-xl p-6 flex flex-col h-full">
+          <div class="flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                IA de Voz · Telefonia Local
+              </span>
+              <span class="text-xs text-slate-400 font-mono">v1.2.0 · Local-First</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-100 mb-2">Porta-Voz</h3>
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed font-light">
+              Assistente de voz em tempo real (Gemini Live) que faz e recebe chamadas telefônicas reais pelo próprio celular Android, utilizando o chip e plano do usuário. Áudio 100% digital entre PC e telefone, resolvendo burocracias com supervisão humana estrita.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 mt-auto text-xs font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Gemini Live</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Android / ADB</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Phone Link</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">WASAPI Loopback</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">Porta-Voz</h3>
-          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-            Assistente de voz em tempo real (Gemini Live) que faz e recebe chamadas telefônicas reais pelo próprio celular Android, utilizando o chip e plano do usuário. Áudio 100% digital entre PC e telefone, resolvendo burocracias (agendamentos e cotações) com supervisão humana estrita.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
-            <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Gemini Live</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Android / ADB</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Phone Link</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">WASAPI Loopback</span>
+          <div class="flex items-center gap-3 pt-3 mt-auto border-t border-slate-800/80">
+            <a href="https://github.com/Yiuky/agente-ligacao" target="_blank" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              Ver Projeto no GitHub &rarr;
+            </a>
           </div>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-slate-800/80">
-          <a href="https://github.com/Yiuky/agente-ligacao" target="_blank" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
-            Ver Projeto no GitHub &rarr;
-          </a>
-        </div>
-      </div>
 
-      <!-- ReperIO -->
-      <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-sky-500/10 text-sky-400 border border-sky-500/20">
-              Infraestrutura &amp; Storage
-            </span>
-            <span class="text-xs text-slate-400 font-mono">MIT</span>
+        <!-- ReperIO -->
+        <div class="glass-card rounded-xl p-6 flex flex-col h-full">
+          <div class="flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                Infraestrutura &amp; Storage
+              </span>
+              <span class="text-xs text-slate-400 font-mono">MIT</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-100 mb-2">ReperIO</h3>
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed font-light">
+              Encontra, indexa, exporta (Excel/CSV/TXT) e copia arquivos em servidores de grande volume e alta latência (SMB/DFS) sem instalar nada. Executável único para Windows e Linux com tolerância a diretórios que congelam conexões de rede.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 mt-auto text-xs font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Single Binary</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">SMB / DFS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Multi-threading</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">ReperIO</h3>
-          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-            Encontra, indexa, exporta (Excel/CSV/TXT) e copia arquivos em servidores de grande volume e alta latência (SMB/DFS) sem instalar nada. 
-            Executável único para Windows e Linux com tolerância a diretórios que congelam conexões de rede.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
-            <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Single Binary</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">SMB / DFS</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Multi-threading</span>
+          <div class="flex items-center gap-3 pt-3 mt-auto border-t border-slate-800/80">
+            <a href="https://github.com/Yiuky/ReperIO" target="_blank" class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1">
+              Ver Código no GitHub &rarr;
+            </a>
           </div>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-slate-800/80">
-          <a href="https://github.com/Yiuky/ReperIO" target="_blank" class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1">
-            Ver Código no GitHub &rarr;
-          </a>
-        </div>
-      </div>
 
-      <!-- CODES -->
-      <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              Campo &amp; Metadados
-            </span>
-            <span class="text-xs text-slate-400 font-mono">Python</span>
+        <!-- CODES -->
+        <div class="glass-card rounded-xl p-6 flex flex-col h-full">
+          <div class="flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                Campo &amp; Metadados
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Python</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-100 mb-2">CODES</h3>
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed font-light">
+              Automação para processamento e estampagem de metadados EXIF em fotos de vistorias de campo (carimbo visual e gravação de tags GPS, coordenadas, altitude, data e hora).
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 mt-auto text-xs font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">EXIF</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Pillow</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800">Geotagging</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">CODES</h3>
-          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-            Automação para processamento e estampagem de metadados EXIF em fotos de vistorias de campo (carimbo visual e gravação de tags GPS, coordenadas, altitude, data e hora).
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
-            <span class="px-2 py-0.5 rounded bg-slate-800">Python</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">EXIF</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Pillow</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800">Geotagging</span>
+          <div class="flex items-center gap-3 pt-3 mt-auto border-t border-slate-800/80">
+            <a href="https://github.com/Yiuky/CODES" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              Ver Código no GitHub &rarr;
+            </a>
           </div>
-        </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-slate-800/80">
-          <a href="https://github.com/Yiuky/CODES" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
-            Ver Código no GitHub &rarr;
-          </a>
         </div>
       </div>
     </div>
@@ -294,7 +312,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-xl mb-3">🛰️</div>
         <h4 class="font-bold text-slate-100 mb-1">Sensoriamento Remoto</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -302,7 +320,7 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-xl mb-3">🗺️</div>
         <h4 class="font-bold text-slate-100 mb-1">Geoprocessamento</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -310,7 +328,7 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-xl mb-3">🤖</div>
         <h4 class="font-bold text-slate-100 mb-1">Automação e ETL</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -318,7 +336,7 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-xl mb-3">🧠</div>
         <h4 class="font-bold text-slate-100 mb-1">IA Local &amp; Privacidade</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -326,7 +344,7 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-xl mb-3">🧰</div>
         <h4 class="font-bold text-slate-100 mb-1">Ferramentas para Usuários Finais</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -334,7 +352,7 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-xl p-5">
+      <div class="glass-card rounded-xl p-5 flex flex-col h-full">
         <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-xl mb-3">🌿</div>
         <h4 class="font-bold text-slate-100 mb-1">Engenharia Ambiental</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -352,7 +370,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="glass-card rounded-xl p-6">
+      <div class="glass-card rounded-xl p-6 flex flex-col h-full">
         <h3 class="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-4">Geoespacial</h3>
         <div class="flex flex-wrap gap-2 text-xs font-medium">
           <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-200">ArcGIS / arcpy</span>
@@ -366,7 +384,7 @@
         </div>
       </div>
 
-      <div class="glass-card rounded-xl p-6">
+      <div class="glass-card rounded-xl p-6 flex flex-col h-full">
         <h3 class="font-mono text-xs font-semibold text-sky-400 uppercase tracking-wider mb-4">Desenvolvimento &amp; Automação</h3>
         <div class="flex flex-wrap gap-2 text-xs font-medium">
           <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-200">Python 3 &amp; 2.7</span>
@@ -379,7 +397,7 @@
         </div>
       </div>
 
-      <div class="glass-card rounded-xl p-6">
+      <div class="glass-card rounded-xl p-6 flex flex-col h-full">
         <h3 class="font-mono text-xs font-semibold text-purple-400 uppercase tracking-wider mb-4">Inteligência Artificial &amp; Voz</h3>
         <div class="flex flex-wrap gap-2 text-xs font-medium">
           <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-200">Ollama (LLMs Locais)</span>
@@ -402,15 +420,17 @@
     </div>
 
     <div class="glass-card rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-start gap-6">
-      <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl shrink-0">
-        📄
+      <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0">
+        <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
       </div>
       <div>
         <span class="px-2 py-0.5 rounded text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 mb-2 inline-block">Artigo Científico · 2025</span>
         <h3 class="text-lg sm:text-xl font-bold text-slate-100 mb-2">
           Aplicação integrada de TGI e NDMI para identificação de desmatamento químico no Pantanal, Brasil
         </h3>
-        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+        <p class="text-sm text-slate-300 leading-relaxed mb-4 font-light">
           Revista <strong>RA'E GA (UFPR)</strong>, v. 63, n. 2, 2025.<br>
           <em>Ferreira, J. C.; Dias, A. P.; <strong>Gambati, J. F.</strong></em>
         </p>
@@ -430,25 +450,61 @@
   <section id="cafe" class="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full">
     <div class="glass-card rounded-2xl p-6 sm:p-8 border-amber-500/20 bg-gradient-to-br from-slate-900/90 to-amber-950/20">
       <div class="flex flex-col sm:flex-row items-center gap-8">
-        <div class="shrink-0 bg-white p-3 rounded-xl shadow-lg">
+        <div class="shrink-0 bg-white p-3 rounded-xl shadow-lg flex flex-col items-center">
           <img src="pix_qrcode.png" alt="QR Code Pix" class="w-36 h-36 object-contain" />
+          <span class="text-[10px] text-slate-500 font-mono mt-1">Escaneie no app do banco</span>
         </div>
         <div class="flex-1 text-center sm:text-left">
           <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-amber-400 mb-2">
-            <span>☕</span> Apoio ao desenvolvedor
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h18v2H2z"/></svg>
+            Apoio ao desenvolvedor
           </div>
           <h3 class="text-2xl font-bold text-slate-100 mb-2">Gostou das ferramentas? Pague um café!</h3>
           <p class="text-sm text-slate-300 mb-4 leading-relaxed font-light">
             Se alguma das ferramentas economizou seu tempo de trabalho, considere contribuir com qualquer valor via Pix para manter o desenvolvimento ativo e livre.
           </p>
-          <div class="bg-slate-950/80 p-3 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-            <div><span class="text-slate-500">Chave aleatória:</span> <code class="text-amber-300">fcf8071f-416d-49f1-b4b9-3188d3d03c4b</code></div>
-            <div><span class="text-slate-500">Favorecido:</span> Joberth Firmino Gambati</div>
+          <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-300 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div class="truncate">
+                <span class="text-slate-500">Chave aleatória:</span>
+                <code class="text-amber-300 ml-1 select-all">fcf8071f-416d-49f1-b4b9-3188d3d03c4b</code>
+              </div>
+              <button onclick="copiarPix('fcf8071f-416d-49f1-b4b9-3188d3d03c4b', this)" class="shrink-0 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors inline-flex items-center gap-1.5 text-xs font-sans">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Copiar chave</span>
+              </button>
+            </div>
+            <div class="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div class="text-slate-400 font-sans text-xs">
+                Favorecido: <strong class="text-slate-200">Joberth Firmino Gambati</strong>
+              </div>
+              <button onclick="copiarPix('00020101021126580014br.gov.bcb.pix0136fcf8071f-416d-49f1-b4b9-3188d3d03c4b5204000053039865802BR5917JOBERTH F GAMBATI6006CUIABA62070503***63048088', this)" class="shrink-0 px-3 py-1.5 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors inline-flex items-center gap-1.5 text-xs font-sans">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                <span>Copiar Código Pix</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    function copiarPix(texto, btn) {
+      navigator.clipboard.writeText(texto).then(() => {
+        const span = btn.querySelector('span');
+        const originalText = span.innerText;
+        span.innerText = '✓ Copiado!';
+        btn.classList.add('border-emerald-500/60', 'text-emerald-400');
+        setTimeout(() => {
+          span.innerText = originalText;
+          btn.classList.remove('border-emerald-500/60', 'text-emerald-400');
+        }, 2000);
+      }).catch(() => {
+        prompt('Copie o código Pix abaixo:', texto);
+      });
+    }
+  </script>
 
   <!-- Footer -->
   <footer class="mt-auto border-t border-slate-800/80 py-8 px-4 sm:px-6 text-center text-xs text-slate-500">
